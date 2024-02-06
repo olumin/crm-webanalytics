@@ -12,7 +12,7 @@ class Customer(models.Model):
    
     def __str__(self):
         return self.name  
-    
+
     
 class Score(models.Model):
         
@@ -59,21 +59,23 @@ class Score(models.Model):
     elements = models.CharField(max_length=50)
     partners_name = models.CharField(max_length=50)
     products = models.CharField(max_length=50)
-    current_focus = models.FloatField()
-    actual = models.FloatField()
-    achieved = models.FloatField(null=False)
-    points = models.FloatField(null=False)
-    commission = models.FloatField(null=False)
-    next_airtime_expectation= models.FloatField()
-    topit_expectation = models.FloatField()
-    topit_focus = models.FloatField(null=False)
-    topit_actual = models.FloatField(null=False)
-    topit_achieved = models.FloatField()
+    current_focus = models.CharField(max_length=50)
+    actual = models.CharField(max_length=50)
+    achieved = models.CharField(max_length=50)
+    points = models.CharField(max_length=50)
+    commission = models.CharField(max_length=50)
+    next_airtime_expectation= models.CharField(max_length=50)
+    topit_expectation = models.CharField(max_length=50)
+    topit_focus = models.CharField(max_length=50)
+    topit_actual =models.CharField(max_length=50)
+    topit_achieved = models.CharField(max_length=50)
     state = models.CharField(max_length=50, null=True)
     currentmonth = models.CharField(max_length=50, null=True)
     monthsec = models.CharField(max_length=50, null=True)
     total_airtime = models.CharField(max_length=50)
-    total_topit = models.CharField(max_length=50)
+   
+    total_commission = models.CharField(max_length=50)
+    
 
     def __str__(self):
         return self.partners_name 
@@ -136,6 +138,6 @@ class Score_hist(models.Model):
     currentmonth = models.CharField(max_length=50, null=True)
     monthsec = models.CharField(max_length=50, null=True)
 # Create your models here.
-  
+
     def __str__(self):
         return self.name
