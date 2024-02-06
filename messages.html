@@ -1,0 +1,33 @@
+{% if messages %} 
+        <div class="alert">
+            <style>
+                .alert {
+                    padding: 5px;
+                    background-color: #0000ff;
+                    color: white;
+                  }
+                  
+                  .closebtn {
+                    margin-left: 15px;
+                    color: white;
+                    font-weight: bold;
+                    float: right;
+                    font-size: 18px;
+                    line-height: 20px;
+                    cursor: pointer;
+                    transition: 10s;
+                  }
+                  
+                  .closebtn:hover {
+                    color: black;
+                  }
+            </style>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {% for message in messages %}
+			<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</div>
+		{% endfor %}
+          </div>   
+    
+	{% endif %}<br>
