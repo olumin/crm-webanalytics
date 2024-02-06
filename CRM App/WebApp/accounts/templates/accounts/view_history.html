@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from colorlib.com/etc/tb/Table_Responsive_v1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jan 2024 16:32:40 GMT -->
+<head>
+	
+	<br>
+	<div class="gradient-custom-2 h-100">
+		
+		<div class="mask d-flex align-items-center h-100">
+		  <div class="container">
+			<div class="row justify-content-center">
+				<br><br>
+					<h3>Transaction History</h3>
+					<br>
+			  <div class="col-12">
+				<div class="table-responsive">
+				  <table class="table table-dark table-bordered mb-0">
+					<thead>
+					  <tr>
+						  <th scope="col">Current Month </th>
+						  <th scope="col">Monthly Focus</th>
+						  <th scope="col">Actual airtime sold</th>
+						  <th scope="col">Achieved(%)</th>
+						  <th scope="col">Point</th>
+						  <th scope="col">Commission</th>
+						  <th scope="col">Topit Focus</th>
+						  <th scope="col">Topit Actual</th>
+						  <th scope="col">Topit Achieved</th>
+					  </tr>
+					</thead>
+				  </table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	{% extends "accounts/header.html" %}
+	{% block content %}
+
+	
+<title>Transaction History</title>
+{% load static %}
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<body>
+		{% for scorei in scoresi %}
+	<link rel="stylesheet" type="text/css" href="css/tab.css">
+	<section class="intro">
+	
+	<div class="gradient-custom-2 h-100">
+	  <div class="mask d-flex align-items-center h-100">
+		<div class="container">
+		  <div class="row justify-content-center">
+			<div class="col-12">
+			  <div class="table-responsive">
+				<table class="table table-dark table-bordered mb-0">
+				  <thead>
+				
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th scope="row">{{scorei.currentmonth}}</th>
+					  <td>{{scorei.current_focus}}</td>
+					  <td>{{scorei.actual}}</td>
+					  <td>{{scorei.achieved}}</td>
+					  <td>{{scorei.point}}</td>
+					  <td>{{scorei.commission}}</td>
+					  <td>{{scorei.topit_focus}}</td>
+					  <td>{{scorei.topit_actual}}</td>
+					  <td>{{scorei.topit_achieved}}</td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+  </section>
+</body>
+
+
+</tr>
+{%endfor%}
+
+
+</body>
+
+<!-- Mirrored from colorlib.com/etc/tb/Table_Responsive_v1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jan 2024 16:32:46 GMT -->
+</html>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,665 @@
+{% extends "accounts/main.html" %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.bootstrapdash.com/star-admin2-free/template/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Dec 2023 20:43:28 GMT -->
+<head>
+  <style>
+    button.mbtn {
+      padding:0.2em 1.5em;
+      border-radius: 8px;
+      color:#fff;
+      background-color:#1976d2;
+      font-size:1.1em;
+      border:0;
+      cursor:pointer;
+      margin:0.002em;
+    }
+    
+    button.mbtn.green
+    {
+        background-color:#2e7d32;
+    }
+
+    button.mbtn.green2
+    {
+        background-color:#800080;
+        border-radius: 4px 4px;
+        font-size:1.1em;
+        cursor:alias;
+    }
+    
+    button.mbtn.red
+    {
+        background-color:#c62828;
+    }
+  
+  </style>
+  
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Ringo Revenue Assurance </title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  
+ 
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.html">
+  <link rel="stylesheet" href="js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <!-- endinject -->
+
+</head>
+<body>
+  
+    <div class="row p-0 m-0 proBanner" id="proBanner">
+      <div class="col-md-12 p-0 m-0">
+        <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
+          <div class="ps-lg-1">
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+        
+      
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+        <ul class="navbar-nav">
+          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+          </br>
+            <h1 class="welcome-text"> 
+              {% if user.is_authenticated %}
+              
+              Hello, <span class="text-black fw-bold">
+        
+                {{request.user}} 
+
+                {% endif %}
+             
+            </span></h1>
+            <h3 class="welcome-sub-text">Your performance summary this Month </h3>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+         
+           
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            
+          </li>
+         
+           
+          </li>
+         
+          
+           
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
+                </div>
+              </a>
+             
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+               
+                <div class="preview-item-content flex-grow py-2">
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+            <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+             
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+              </div>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
+              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+           
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                   
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                   
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                   
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+            <h4 class="px-3 text-muted mt-5 fw-light mb-0">Events</h4>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary me-2"></i>
+                <span>Feb 11 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>
+            </div>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary me-2"></i>
+                <span>Feb 7 2018</span>
+              </div>
+              
+            </div>
+          </div>
+          <!-- To do section tab ends -->
+          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+            <div class="d-flex align-items-center justify-content-between border-bottom">
+              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See All</small>
+            </div>
+            <ul class="chat-list">
+              <li class="list active">
+                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                
+                <small class="text-muted my-auto">19 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                 
+                
+                </div>
+                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                <small class="text-muted my-auto">23 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+               
+                <small class="text-muted my-auto">14 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="info">
+                  <p>James Richardson</p>
+                  <p>Away</p>
+                </div>
+                <small class="text-muted my-auto">2 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Madeline Kennedy</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">5 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="info">
+                  <p>Sarah Graves</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">47 min</small>
+              </li>
+            </ul>
+          </div>
+          <!-- chat tab ends -->
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#overview">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <button class="mbtn green">Dashboard</button>
+            </a>
+          </li>
+          
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <button class="mbtn red">Logout</button>
+              </a>
+            </li>
+          <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{%url 'view_history'%}">
+                  <i class="mdi mdi-grid-large menu-icon"></i>
+                
+                  <button class="mbtn blue">View History</button>
+                </a>
+              </li>
+            
+          </li>
+          
+          
+             
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="home-tab">
+                <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                    </li>
+                    
+                  </ul>
+                  <div>
+                    <div class="btn-wrapper">
+                    
+                      <a href="https://api.whatsapp.com/send?phone=2348102519768&text=%22Hello%2C%20I%20want%20more%20clarity%20about%20this%20update%22" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Contact Admin</a>
+                    </div>
+                  </div>
+                </div>
+
+                
+
+                <div class="tab-content tab-content-basic">
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="statistics-details d-flex align-items-center justify-content-between">
+                          <div>
+                            {% for score in scores %}
+                            <p class="statistics-title">
+                                    {{score.currentmonth}} Focus</p>
+                            <p class="rate-percentage">
+                              {{score.current_focus}}
+                            </p>
+                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>
+                             
+                              Topit-{{score.topit_focus}}
+                            
+                            </span></p>
+                          </div>
+                          <div>
+                            <p class="statistics-title">Actual</p>
+                            <h9 class="rate-percentage">
+                              {{score.actual}}
+                            </h9>
+                            <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>
+                              {{score.topit_actual}}
+                              
+                        </span></p>
+                          </div>
+                          <div>
+                            <p class="statistics-title">Achieved</p>
+                            <h3 class="rate-percentage">
+                              {{score.achieved}}%
+                                 
+                            </h3>
+                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>
+                              {{score.topit_achieved}}% 
+                            </span></p>
+                          </div>
+                          <div class="d-none d-md-block">
+                            <p class="statistics-title">Point(%)</p>
+                            <span><h6>
+                             {{score.points}}%
+                            </h6>
+                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>
+                              score  
+                          </span>
+                            </div>
+                          <div class="d-none d-md-block">
+                            <p class="statistics-title">Commission</p>
+                            <h3 class="rate-percentage">
+                             {{score.commission}}
+                            </h3>
+                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>
+                            Allocated
+                            </span></p>
+                          </div>
+                          <div class="d-none d-md-block">
+                            <p class="statistics-title">
+                            {{score.monthsec}}
+                               Airtime Expectation</p>
+                            <h3 class="rate-percentage">
+                             {{score.next_airtime_expectation}}</td>
+                            
+                            </h3>
+                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>
+                              Next Month Focus
+                            </span></p>
+                          
+                          </div>
+                          <div>
+                            <p class="statistics-title">Topit Expectation(1%)</p>
+                            <h3 class="rate-percentage">
+                              {{score.topit_expectation}}
+                            </h3>
+                            <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>~1%</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="row">
+                      <div class="col-lg-8 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                    <h4 class="card-title card-title-dash">Market Overview</h4>
+                                   <p class="card-subtitle card-subtitle-dash">Commission Allocation for Current month</p>
+                                  </div>
+                                  <div>
+                                    <div class="dropdown">
+                                       <button class="mbtn green2">This Month</button>
+                                     
+                                      
+                                      
+
+
+                                        
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-sm-flex align-items-center mt-1 justify-content-between">
+                                  <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">
+                                    N{{score.commission}}
+                                  </h2><h6 class="me-2">NGN</h6><h4 class="text-success">(
+                                    ~{{score.points}}%
+                                    )</h4></div>
+
+                                    
+                              
+                                  <div class="me-3"><div id="marketing-overview-legend"></div></div>
+                                </div>
+                               
+
+                                
+                                  
+                                    
+                                     
+
+
+  
+  <canvas id="myChart" width="300" height="300"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                    
+                                
+  
+<script>
+var xValues = ['Expected', 'Achieved'];
+
+var yValues = [{% for data in scores %} '{{ data.current_focus }}' {% endfor %}, {% for data in scores %} '{{ data.actual }}' {% endfor %}]
+
+
+var barColors = ["red", "green"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+ 
+    labels: xValues,
+    datasets: [{
+      label: 'SALES LEVEL',
+     
+      backgroundColor: barColors,
+      data: yValues,
+      borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+    
+</script>
+
+</div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row flex-grow">
+                          <div class="col-12 grid-margin stretch-card">
+                           
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                       
+
+                        <div class="row flex-grow">
+                          <div class="col-md-6 col-lg-6 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body card-rounded">
+                                <h4 class="card-title  card-title-dash">Recent Update</h4>
+                                <p class="mb-0 text-small text-muted"></br>{{score.monthsec}} 2024</p>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  <div class="wrapper w-100">
+                                    
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="list align-items-center border-bottom py-2">
+                                  
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center">
+                                        <i class="mdi mdi-calendar text-muted me-1"></i>
+                                   
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                         
+                                 <!-- cHARTS -->
+
+                                 <div class="row">
+                                  <div class="col-lg-8 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                          <div class="card-body">
+                                            <div class="d-sm-flex justify-content-between align-items-start">
+                                              <div>
+                                                <h4 class="card-title card-title-dash">Total Sales</h4>
+                                               <p class="card-subtitle card-subtitle-dash">Total Airtime sales this month</p>
+                                              </div>
+                                              <div>
+                                                <div class="dropdown">
+                                                  
+      
+                                                    
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="d-sm-flex align-items-center mt-1 justify-content-between">
+                                              <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">
+                                                N{{score.total_airtime}} <h6 class="me-2">Logical</h6>
+                                              </h2><h6 class="me-2"></h6><h4 class="text-success">(
+                                                N{{score.total_topit}} <h6 class="me-2">Topit</h6>
+                                                )</h4></div>
+            
+                                                
+                                          
+                                              <div class="me-3"><div id="marketing-overview-legend"></div></div>
+                                  
+          
+                       
+                        
+                                
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        
+      
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+ 
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="vendors/progressbar.js/progressbar.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+
+<!-- Mirrored from demo.bootstrapdash.com/star-admin2-free/template/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Dec 2023 20:43:47 GMT -->
+</html>
+
+{% endfor %}  
+{% endblock %}
+
+

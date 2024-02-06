@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from www.11-76.com/themes/dinex/?storefront=envato-elements by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jan 2024 11:00:12 GMT -->
+<head>
+        <meta charset="utf-8">
+        <title>
+            Ringo Data Analysis 
+        </title>
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <meta content="" name="keywords">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+        <!-- ex nihilo || May 2022 -->
+        <!-- style start -->
+        <link href="static/intro-css/plugins.css" media="all" rel="stylesheet" type="text/css">
+        <link href="static/intro-css/style.css" media="all" rel="stylesheet" type="text/css">
+        <!-- style end -->
+        <!-- google fonts start -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900%7CMontserrat:400,700%7COswald:300,400,700" rel="stylesheet" type="text/css">
+        <!-- google fonts end -->
+    </head>
+   
+    <body>
+      
+        <!-- preloader start -->
+        <div class="preloader-bg"></div>
+        <div id="preloader">
+            <div id="preloader-status">
+                <div class="preloader-position loader">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+    </body>
+     
+        <!-- navigation start -->
+        <nav class="navbar navbar-fixed-top navbar-bg-switch">
+            <!-- container start -->
+            
+            <div class="container">
+                <div class="navbar-header fadeIn-element">
+                    <!-- logo start -->
+                    <div class="logo">
+                        <a class="navbar-brand logo" href="https://ringo.ng">
+                            <!-- logo light start -->
+                            <img alt="Logo" class="logo-light" src="static/intro-images/img/logo-light.PNG">
+                           
+                            <!-- logo light end -->
+                            <!-- logo dark start -->
+                            <img alt="Logo" class="logo-dark" src="static/intro-images/img/logo-light.PNG">
+                            <!-- logo dark end -->
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <!-- main navigation start -->
+                <div class="main-navigation fadeIn-element">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle
+                        navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <!-- menu start -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="page-scroll active" href="{% url 'login' %}">Login</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="https://api.whatsapp.com/send?phone=2348102519768&text=%22Hello%2C%20I%20want%20more%20clarity%20about%20this%20update%22">Contact Admin</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#demos"></a>
+                            </li>      
+ 
+                        </ul>
+
+
+                        <style>
+                            .alert {
+                              padding: 20px;
+                              background-color: #f44336;
+                              color: white;
+                              opacity: 1;
+                              transition: opacity 0.6s;
+                              margin-bottom: 15px;
+                            }
+                            
+                            .alert.success {background-color: #04AA6D;}
+                            .alert.info {background-color: #2196F3;}
+                            .alert.warning {background-color: #ff9800;}
+                        </style>
+
+                       
+                         
+
+
+
+
+
+                        <!-- menu end -->
+                        <div class="alert-info">
+                          
+                        </div>             
+
+        <br>
+         {% for message in messages %}
+
+        <div class="alert-info">
+            {{message}}
+        </div>
+   
+{% endfor %}
+
+
+
+<script>
+    // Get all info messages
+    var info_messages = document.getElementsByClassName('alert-info');
+
+    setTimeout(function(){
+        for (var i = 0; i < info_messages.length; i ++) {
+            // Set display attribute as !important, neccessary when using bootstrap
+            info_messages[i].setAttribute('style', 'display:none !important');
+        }
+    }, 3000);
+</script>
+<script>
+    var message_ele = document.getElementById("msg");
+setTimeout(function() {
+  message_ele.style.display = "none";
+}, 3000);
+
+   
+</script>
+
+
+
+                        <BR>
+                       
+                    </div>
+                </div>
+                <!-- main navigation end -->
+            </div>
+            <!-- container end -->
+        </nav>
+        <!-- navigation end -->
+
+
+        <!-- vertical lines start -->
+        <div class="vertical-lines-wrapper">
+            <div class="vertical-lines"></div>
+        </div>
+        <!-- vertical lines end -->
+        <!-- home start -->
+    
+            <!-- hero bg start -->
+            <div class="hero-fullscreen overlay overlay-top-bottom-dark-15">
+                <!-- single image start -->
+                <div class="hero-fullscreen-FIX overlay overlay-dark-70">
+                    <div class="hero-bg bg-img-SINGLE"></div>
+                </div>
+                <!-- single image end -->
+            </div>
+            <!-- hero bg end -->
+            <!-- center container start -->
+            <div class="center-container">
+                <!-- center block start -->
+                <div class="center-block">
+                    <!-- home subtitle start -->
+                    <h2 class="home-page-title fadeIn-element">
+                        RINGO REVENUE ASSURANCE 
+                    </h2>
+                    <!-- home subtitle end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-half"></div>
+                    <!-- divider end -->
+                    <!-- home title start -->
+                    <h2 class="section-heading section-heading-small">
+                       Trade <span>Partners</span> Performance <h2 class="home-page-title fadeIn-element">
+                        <br> Dashboard
+                    </h2>
+                    <!-- home title end -->
+                    <!-- divider start -->
+                    <div class="inner-divider-half"></div>
+                    <!-- divider end -->
+                    <!-- button start -->
+                    <div class="more-wraper-center more-wraper-center-home fadeIn-element">
+                        <a class="page-scroll" href="{% url 'login' %}">
+                            <div class="more-button-bg-center more-button-circle"></div>
+                            <div class="more-button-txt-center">
+                                <span>Get Started</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- button end -->
+                </div>
+                <!-- center block end -->
+            </div>
+            <!-- center container end -->
+            <!-- scroll indicator start -->
+            <div class="scroll-indicator">
+                <div class="scroll-indicator-wrapper">
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+            <!-- scroll indicator end -->
+        </div>
+        <!-- home end -->
+        <!-- must haves start -->
+        <section id="must-haves" class="bg-color-1">
+            <!-- container start -->
+            <div class="container sections">
+                <!-- divider start -->
+                <div class="inner-divider"></div>
+                <!-- divider end -->
+                <!-- row start -->
+                <div class="row">
+                    <!-- col start -->
+                
+                <!-- divider end -->
+                <!-- row start -->
+
+                
+        <script src="static/intro-js/plugins.js"></script> 
+        <script src="static/intro-js/intro.js"></script>
+        <!-- scripts end -->
+    </body>
+
+<!-- Mirrored from www.11-76.com/themes/dinex/?storefront=envato-elements by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jan 2024 11:02:28 GMT -->
+</html>
